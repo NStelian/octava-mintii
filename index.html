@@ -1,65 +1,146 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Octava minții</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      text-align: center;
-      padding: 50px 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Octava minții</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    h1 {
-      color: #2c3e50;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        scroll-behavior: smooth;
+      }
 
-    p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-    }
+      section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+      }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+      section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        filter: brightness(0.4);
+      }
 
-    .buttons a {
-      display: inline-block;
-      padding: 12px 25px;
-      font-size: 1rem;
-      color: white;
-      background-color: #3498db;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-    }
+      .intro::before {
+        background-image: url("https://images.unsplash.com/photo-1500674425229-f692875b0ab7"); /* imagine copii/carte */
+      }
 
-    .buttons a:hover {
-      background-color: #2980b9;
-    }
-  </style>
-</head>
-<body>
+      .buy::before {
+        background-image: url("https://images.unsplash.com/photo-1515165562835-c4c8e3f5f98b"); /* imagine citit/librărie */
+      }
 
-  <h1>Octava minții</h1>
-  <p>
-    *Octava minții* este o carte dedicată copiilor care își doresc să descopere lumea gândirii, a creativității și a imaginației. Printr-un limbaj accesibil și captivant, această carte deschide ușa către un univers interior bogat, încurajând curiozitatea și dezvoltarea emoțională.
-  </p>
+      .donate::before {
+        background-image: url("https://images.unsplash.com/photo-1509099836639-18ba1795216d"); /* imagine ONG/ajutor copii */
+      }
 
-  <div class="buttons">
-    <a href="https://www.amazon.com" target="_blank">Cumpără de pe Amazon</a>
-    <a href="https://books.google.com" target="_blank">Vezi pe Google Books</a>
-  </div>
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
 
-</body>
+      p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .buttons a {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 24px;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 8px;
+        background-color: #3498db;
+        color: white;
+        transition: background-color 0.3s;
+      }
+
+      .buttons a:hover {
+        background-color: #2980b9;
+      }
+
+      footer {
+        background-color: #222;
+        color: #aaa;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Secțiunea 1: Titlu & descriere -->
+    <section class="intro">
+      <div>
+        <h1>Octava minții</h1>
+        <p>
+          O carte specială dedicată copiilor curioși, creativi și sensibili – o
+          invitație într-o călătorie prin gândire, imaginație și emoție. Ideală
+          pentru cititorii tineri care își descoperă vocea interioară.
+        </p>
+      </div>
+    </section>
+
+    <!-- Secțiunea 2: Cumpărare -->
+    <section class="buy">
+      <div>
+        <h1 style="color: black">Disponibil acum</h1>
+        <p style="color: black">
+          Poți comanda cartea de pe platformele de mai jos:
+        </p>
+        <div class="buttons">
+          <a href="https://www.amazon.com" target="_blank"
+            >Cumpără de pe Amazon</a
+          >
+          <a href="https://books.google.com" target="_blank"
+            >Vezi pe Google Books</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Secțiunea 3: Redirecționare fonduri -->
+    <section class="donate">
+      <div>
+        <h1>Un gest care contează</h1>
+        <p>
+          Toate încasările din vânzarea cărții
+          <strong>vor fi redirecționate către ONG-uri</strong> care sprijină
+          educația și dezvoltarea copiilor defavorizați. Fiecare carte cumpărată
+          înseamnă o șansă oferită mai departe.
+        </p>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Octava minții • Toate drepturile rezervate</footer>
+  </body>
 </html>
